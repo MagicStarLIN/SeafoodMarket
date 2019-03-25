@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>			
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">		
+	
+<mapper namespace="mapper">
+			
+	<resultMap type="com.one.manager.bean.Vendor" id="Vendormap">		
+	
+		<id property="vendor_id" column="vendor_id"/>	
+		<result property="vendor_name" column="vendor_name"/>	
+		<result property="vendor_address" column="vendor_address"/>
+		<result property="vendor_phone" column="vendor_phone"/>
+		<result property="vendor_fax" column="vendor_fax"/>
+		<result property="vendor_contact_person" column="vendor_contact_person"/>	
+		
+		<collection property="bill" ofType="com.one.manager.bean.Bill">	
+			<id property="bill_id" column="bill_id"/>
+			<result property="bill_date" column="bill_date"/>
+			<result property="bill_due_date" column="bill_due_date"/>
+			<result property="bill_paid_flag" column="bill_paid_flag"/>
+			<result property="bill_amount" column="bill_amount"/>
+		</collection>
+			
+	</resultMap>	
+		
+</mapper>
